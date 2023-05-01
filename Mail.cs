@@ -11,11 +11,7 @@ using Exception = System.Exception;
 namespace Streamlining_Customer_Verification
 {
     internal class Mail
-    {
-        /*public Mail() 
-        {
-            Console.WriteLine("Check");
-        }*/
+    {        
         public bool getMail()
         {
             Console.WriteLine("getMail started");
@@ -38,7 +34,7 @@ namespace Streamlining_Customer_Verification
             // string searchDate = "18-03-2023";
 
             // Check for Directory
-            string directoryPath = @"E:\Studies\MCA\Semester 4\Philips\Mail Docs\" + today.ToString("MMM yyyy") + "\\" + today.ToString("dd MMM yyyy");
+            string directoryPath = ConfigurationManager.AppSettings["attachDownload"] + today.ToString("MMM yyyy") + "\\" + today.ToString("dd MMM yyyy");
             // Check if directory exists, if not create directory
             if (!Directory.Exists(directoryPath))
                 Directory.CreateDirectory(directoryPath);
